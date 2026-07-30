@@ -1,7 +1,7 @@
 {
   "name": "Gry",
   "short_name": "Gry",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
