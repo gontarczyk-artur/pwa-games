@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "pwa-games-";
-const CACHE_NAME = CACHE_PREFIX + "94ed30ea9676";
+const CACHE_NAME = CACHE_PREFIX + "9b70e3ec0052";
 
 /* Prefiksy cache, które ten SW ma prawo usuwać: aktualny + historyczne nazwy.
    Filtrowanie po prefiksie (zamiast "wszystko !== CACHE_NAME") pozwala trzymać
@@ -46,10 +46,13 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
+// Awaryjny index.html podstawiamy tylko dla nawigacji — dla obrazka czy skryptu
+// zwrócenie strony HTML byłoby błędem trudnym do zdiagnozowania.
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(cacheRes =>
-      cacheRes || fetch(event.request).catch(() => caches.match("./index.html"))
+      cacheRes || fetch(event.request).catch(() =>
+        event.request.mode === "navigate" ? caches.match("./index.html") : Response.error())
     )
   );
 });
