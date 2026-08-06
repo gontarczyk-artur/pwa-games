@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "pwa-games-";
-const CACHE_NAME = CACHE_PREFIX + "9b70e3ec0052";
+const CACHE_NAME = CACHE_PREFIX + "d152ee821052";
 
 /* Prefiksy cache, które ten SW ma prawo usuwać: aktualny + historyczne nazwy.
    Filtrowanie po prefiksie (zamiast "wszystko !== CACHE_NAME") pozwala trzymać
@@ -24,7 +24,9 @@ const FILES_TO_CACHE = [
   "./js/games/tic-tac-toe/index.html",
   "./js/games/tic-tac-toe/game.min.js",
   "./js/games/shikaku/index.html",
-  "./js/games/shikaku/game.min.js"
+  "./js/games/shikaku/game.min.js",
+  "./js/games/battleships/index.html",
+  "./js/games/battleships/game.min.js"
 ];
 
 self.addEventListener("install", event => {
