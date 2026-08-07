@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "pwa-games-";
-const CACHE_NAME = CACHE_PREFIX + "d152ee821052";
+const CACHE_NAME = CACHE_PREFIX + "397d6e434e62";
 
 /* Prefiksy cache, które ten SW ma prawo usuwać: aktualny + historyczne nazwy.
    Filtrowanie po prefiksie (zamiast "wszystko !== CACHE_NAME") pozwala trzymać
